@@ -1,23 +1,17 @@
 import './reset.scss'
 import './index.scss'
-import React, {useEffect} from 'react';
-import {useTypedSelector} from "./hooks/useTypedSelector";
-import {useAction} from "./hooks/useAction";
+import ProductsList from './components/listOfProducts/ProductsList'
+
 
 
 
 
 const App = () => {
-    const {products} = useTypedSelector(state=>state.products)
-    const {fetchProducts} = useAction()
 
-    useEffect(()=>{fetchProducts()},[])
-
-    console.log(products)
 
     return (
-        <div>
-          hello
+        <div style={{padding: '0 60px'}}>
+          <ProductsList />
         </div>
     );
 };
